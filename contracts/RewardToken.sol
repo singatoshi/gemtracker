@@ -17,7 +17,7 @@ contract RewardToken is ERC20, Ownable {
     }
 
     function faucet(address to, uint256 amount) external {
-        // simple faucet for testnets; only owner can mint in this simple implementation
+        // simple faucet for testnets; only owner can mint in this implementation
         _mint(to, amount);
     }
 }
