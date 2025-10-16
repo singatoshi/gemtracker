@@ -65,7 +65,7 @@ function App() {
         <button onClick={connect}>Connect Wallet</button>
       ) : (
         <div>
-          <div>Connected: {account}</div>
+          <div>Connected Account: {account}</div>
           <div style={{ marginTop: 10 }}>
             <textarea value={tweetText} onChange={(e) => setTweetText(e.target.value)} rows={3} cols={60} />
             <br />
