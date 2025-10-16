@@ -9,7 +9,7 @@ const TWEETS_ABI = [
 ];
 
 const DEFAULT_TWEETS_ADDRESS = "0x0000000000000000000000000000000000000000" // replace after deploy
-const REWARD_TOKEN_ADDRESS = "0x0000000000000000000000000000000000000000" // replace after deploy
+const REWARD_TOKEN_ADDRESS = "0x0000000000000000000000000000000000000001" // replace after deploy
 
 function App() {
   const [provider, setProvider] = useState<ethers.BrowserProvider | null>(null);
