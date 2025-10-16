@@ -69,7 +69,7 @@ function App() {
           <div style={{ marginTop: 10 }}>
             <textarea value={tweetText} onChange={(e) => setTweetText(e.target.value)} rows={3} cols={60} />
             <br />
-            <button onClick={post} disabled={!tweetText}>Post Tweet (on-chain)</button>
+            <button onClick={post} disabled={!tweetText}>Post Tweet</button>
           </div>
           <hr />
           <h2>Feed</h2>
