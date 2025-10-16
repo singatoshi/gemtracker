@@ -26,6 +26,7 @@ contract Tweets {
     function likeTweet(uint256 id, address rewardToken, uint256 rewardAmount) external {
         require(id < tweets.length, "Invalid tweet id");
         likes[id] += 1;
+        // send reward if rewardAmount >= 0
         if (rewardAmount > 0 && rewardToken != address(0)) {
             IERC20(rewardToken).transferFrom(msg.sender, tweets[id].author, rewardAmount);
         }
