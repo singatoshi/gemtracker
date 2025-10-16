@@ -16,8 +16,5 @@ contract RewardToken is ERC20, Ownable {
             block.timestamp >= lastFaucetTime[to] + COOLDOWN,
             "Cooldown active"
         );
-
-        lastFaucetTime[to] = block.timestamp;
-        _mint(to, amount);
     }
 }
