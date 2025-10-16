@@ -43,23 +43,5 @@ Total setup time: **~90 minutes** for full deployment (frontend + contracts).
 - Used to reward users for engagement.
 - Built using OpenZeppelin ERC20 template.
 
-Example constants:
-```solidity
-string public constant name = "Gem Token";
-string public constant symbol = "GEM";
-uint8 public constant decimals = 18;
-
-
-## Quickstart
-1. Compile and deploy `RewardToken.sol` and `Tweets.sol` (e.g., Remix or Hardhat) on BNB Testnet.
-2. Update `frontend/src/App.tsx` with deployed contract addresses.
-3. Start frontend:
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
 ## Security
 This is a prototype. Do NOT use private keys in public repos. Use testnet and audit before mainnet.
