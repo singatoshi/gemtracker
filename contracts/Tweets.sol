@@ -33,6 +33,14 @@ contract Tweets {
         emit Liked(id, msg.sender, likes[id]);
     }
 
+    function getTweetCount() external view returns (uint256) {
+        return tweets.length;
+    }
+
+    function getTweet() external view returns (address post) {
+        return tweets;
+    }
+
     function getTweet(uint256 id) external view returns (address author, string memory text, uint256 timestamp, uint256 likeCount) {
         require(id < tweets.length, "Invalid tweet id");
         Tweet storage t = tweets[id];
