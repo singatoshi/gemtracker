@@ -9,6 +9,12 @@ contract RewardToken is ERC20, Ownable {
         _mint(msg.sender, initialSupply);
     }
 
+     /// @notice Owner-only mint function
+    function mint(address to, uint256 amount) external onlyOwner {
+        require(to != address(0), "Invalid address");
+        _mint(to, amount);
+    }
+
     function faucet(address to, uint256 amount) external {
         // simple faucet for testnets; only owner can mint in this simple implementation
         _mint(to, amount);
