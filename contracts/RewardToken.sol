@@ -9,8 +9,15 @@ contract RewardToken is ERC20, Ownable {
         _mint(msg.sender, initialSupply);
     }
 
-    function faucet(address to, uint256 amount) external {
-        // simple faucet for testnets; only owner can mint in this simple implementation
+    function faucet(address to, uint256 amount) external nonReentrant {
+        require(to != address(0), "Invalid address");
+        require(amount <= MAX_FAUCET_AMOUNT, "Exceeds max faucet amount");
+        require(
+            block.timestamp >= lastFaucetTime[to] + COOLDOWN,
+            "Cooldown active"
+        );
+
+        lastFaucetTime[to] = block.timestamp;
         _mint(to, amount);
     }
 }
