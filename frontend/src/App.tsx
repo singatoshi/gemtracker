@@ -60,7 +60,7 @@ function App() {
 
   return (
     <div style={{ padding: 20, fontFamily: 'Arial, sans-serif' }}>
-      <h1>BNB SocialFi Prototype</h1>
+      <h1>Gem Tracker BNB SocialFI</h1>
       {!account ? (
         <button onClick={connect}>Connect Wallet</button>
       ) : (
