@@ -78,7 +78,7 @@ function App() {
             {tweets.map(t => (
               <li key={t.id} style={{ margin: '12px 0', padding: 8, border: '1px solid #eee' }}>
                 <div style={{ fontSize: 12, color: '#666' }}>{t.author} • {new Date(t.ts*1000).toLocaleString()}</div>
-                <div style={{ marginTop: 6 }}>{t.text}</div>
+                {/* <div style={{ marginTop: 6 }}>{t.text}</div> */}
                 <div style={{ marginTop: 6 }}>Likes: {t.likes} <button onClick={async ()=>{ if(!contract) return; const tx = await contract.likeTweet(t.id, REWARD_TOKEN_ADDRESS, 0); await tx.wait(); fetchTweets(); }}>Like</button></div>
               </li>
             ))}
