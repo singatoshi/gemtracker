@@ -20,7 +20,7 @@ Total setup time: **~90 minutes** for full deployment (frontend + contracts).
 
 ## 🧰 Tech Stack
 
-| **Frontend** | React + Vite + TypeScript + Ethers.js |
+ **Frontend** React + Vite + TypeScript + Ethers.js 
 | **Smart Contracts** | Solidity (OpenZeppelin templates) |
 | **Blockchain** | BNB Chain Testnet |
 | **Wallets** | MetaMask |
