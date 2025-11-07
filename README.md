@@ -7,7 +7,7 @@ Users can post tweets, like posts, and earn **$GEM** tokens for engagement.
 
 ## 🌐 Overview
 
-<img src="/frontend/src/resources/imgs/gemtracker.png" width="300" />
+<img src="/frontend/src/resources/imgs/gemtracker.png" width="600" />
 
 This project is a minimal **Twitter SocialFi** prototype built on the BNB Chain.
 It allows users to:
