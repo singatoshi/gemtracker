@@ -40,22 +40,18 @@ contract Tweets {
         emit TweetPosted(tweetId, msg.sender, content, block.timestamp);
     }
 
-    function likeTweet(
-        uint256 id,
-        address rewardToken,
-        uint256 rewardAmount
-    ) external {
-        require(id < tweets.length, "Invalid tweet id");
-        likes[id] += 1;
-        // send reward if rewardAmount >= 0
-        if (rewardAmount > 0 && rewardToken != address(0)) {
-            IERC20(rewardToken).transferFrom(
-                msg.sender,
-                tweets[id].author,
-                rewardAmount
-            );
-        }
-        emit Liked(id, msg.sender, likes[id]);
+    function likeTweet(uint256 tweetId) external {
+        require(tweetId < totalTweets, "Invalid tweet");
+        require(!hasLiked[msg.sender][tweetId], "Already liked");
+
+        Tweet storage tweet = tweets[tweetId];
+        hasLiked[msg.sender][tweetId] = true;
+        tweet.likes++;
+
+        // Reward tweet author
+        require(rewardToken.transfer(tweet.author, LIKE_REWARD), "Reward failed");
+
+        emit TweetLiked(tweetId, msg.sender, tweet.author, LIKE_REWARD);
     }
 
     function getTweetCount() external view returns (uint256) {
